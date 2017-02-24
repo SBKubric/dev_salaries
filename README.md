@@ -24,13 +24,13 @@ You just need to:
 
  3. Register your own application at [Superjob API](api.superjob.ru). Set the link to the app site as link to your fork of this repo.
 
- 4. Export your API key as `SJ_API_KEY` environment variable:
+ 4. Oh, you probably don't want to collect garbage in your pip, so you should install a [virtual environment](docs.python-guide.org/en/latest/dev/virtualenvs/)!
+
+ 5. Export your API key as `SJ_API_KEY` environment variable:
  ```
  export SJ_API_KEY='your_api_key_here'
  ```
  Don't forget about environment variable scope, so launch script from the same environment.
-
- 5. Oh, you probably don't want to collect garbage in your pip, so you should install a [virtual environment](docs.python-guide.org/en/latest/dev/virtualenvs/)!
 
  6. Nevertheless, after cloning a repo you should install requirements:
  ```
