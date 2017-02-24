@@ -41,12 +41,24 @@ Aaaaaand you're done!
 
 ## Example
 
-First of all, fetch all data from API by `python3 fetch_vacancies.py name_of_json_file`
+First of all, fetch all data from API by
+```
+python3 fetch_vacancies.py name_of_json_file
+```
 
-Then process the json file by `python3 prune_vacancies.py name_of_json_file name_for_new_json_file`
+Then process the json file by
+```
+python3 prune_vacancies.py name_of_json_file name_for_new_json_file
+```
 
-Then draw a bar chart by `python3 analyze_vacancies.py name_for_new_json_file`
+Then draw a bar chart by
+```
+python3 analyze_vacancies.py name_for_new_json_file
+```
 
-Or you can just launch a one script `python3 draw_bar_chart.py`
+Or you can just launch a one script
+```
+python3 just_do_it.py
+```
 
 
