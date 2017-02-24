@@ -1,0 +1,45 @@
+#!/usr/local/bin/env
+import argparse
+import json
+import os
+import requests
+from urlencoder import urlencode
+
+# CLIENT_SECRET = 'v1.r072c8d92cd6499e1a1eaafa26a78817a10f332c84f91f41e33fa639d6e5f231254c16e31.bae34cb475f0583cc9471291ade324753d68df71'
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='The script fetches vacancies list from api.superjob.ru and dumps it to'
+                                                 'json file.\nYou need to provide an API key for this script by exporting'
+                                                 'an environment variable <SJ_API_KEY>\n')
+    parser.add_argument('filename', help='The name of output file.')
+    return parser.parse_args()
+
+
+def fetch_vacancies_json() -> dict:
+    api_key = os.getenv('SJ_API_KEY', 'NOT FOUND')
+    if args.api_key == 'NOT FOUND':
+        raise EnvironmentError('The environment variable SJ_API_KEY is not set!')
+    headers = {'X-Api-App-Id': api_key}
+    vacancies_url = 'https://api.superjob.ru/2.0/vacancies/'
+    params = {
+        'town': 4,
+        'catalogues': 33,
+        'count': 100,
+        'keywords': [[10, 'or', 'Программист'], [10, 'or', 'Разработчик'],
+                     [10, 'or', 'Developer'], [10, 'or', 'Software Engineer'], [10, 'or', 'Инженер']]
+    }
+    params = urlencode(params)
+    return json.loads(
+        requests.get('{}?{}'.format(vacancies_url, params), headers=headers).text)
+
+
+def dump_json_to_file(filename: str, json_object: dict):
+    with open(filename, mode='w') as file_handler:
+        return json.dump(json_object, file_handler)
+
+
+if __name__=='__main__':
+    args = parse_args()
+    json_vacancies = fetch_vacancies_json()
+    dump_json_to_file(args.filename, json_vacancies)
