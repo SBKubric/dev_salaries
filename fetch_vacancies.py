@@ -1,11 +1,8 @@
-#!/usr/local/bin/env
 import argparse
 import json
 import os
 import requests
 from urlencoder import urlencode
-
-# CLIENT_SECRET = 'v1.r072c8d92cd6499e1a1eaafa26a78817a10f332c84f91f41e33fa639d6e5f231254c16e31.bae34cb475f0583cc9471291ade324753d68df71'
 
 
 def parse_args():
