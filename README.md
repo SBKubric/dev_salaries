@@ -69,4 +69,4 @@ The result should be look like this:
 
 The code is written in educational purposes ONLY.
 
-[logo]: ./result.png
+[logo]: ./output.png

@@ -55,6 +55,7 @@ def get_dataframe_for_plotting_average_salaries_bar_chart(json_vacancies: dict) 
 
 
 def plot_histogramm(data_frame: pandas.DataFrame, output: str):
+    print(output)
     sns.set(style='white')
     sns.set_context('paper',
                     rc={"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 12})
@@ -74,10 +75,10 @@ def plot_histogramm(data_frame: pandas.DataFrame, output: str):
                        "Author: Stanislav Bogatskiy (github.com/SBKubric)", fontsize=8)
     sns.plt.show()
     if output:
-        g.savefig("output.png", bbox_inches="tight")
+        g.savefig("{}.png".format(output), bbox_inches="tight")
 
 
-def analyze_salaries(json_vacancies: dict, output_filename=None):
+def analyze_salaries(json_vacancies: dict, output_filename):
     prepared_data = get_dataframe_for_plotting_average_salaries_bar_chart(json_vacancies)
     plot_histogramm(prepared_data, output_filename)
 

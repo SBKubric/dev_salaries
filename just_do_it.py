@@ -8,7 +8,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='This script fetches data about software developers vacancies '
                                                  'from api.superjob.ru and builds a histogramm of average salary per'
                                                  'programming language.')
-    parser.add_argument('-o', '--output', help='The name of output image.')
+    parser.add_argument('-o', '--output', default=None, help='The name of output image.')
     return parser.parse_args()
 
 if __name__ == '__main__':
