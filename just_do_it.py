@@ -13,6 +13,9 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
+    print('Fetching vacancies...')
     vacancies_json = fetch_vacancies_json()
+    print('Extracting data...')
     vacancies_json = prune_vacancies(vacancies_json)
+    print('Analyzing data...')
     analyze_salaries(vacancies_json, args.output)

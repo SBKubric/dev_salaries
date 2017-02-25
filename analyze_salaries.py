@@ -72,6 +72,7 @@ def plot_histogramm(data_frame: pandas.DataFrame, output: str):
     data_frame.apply(annotate_bars, ax=ax, axis=1)
     sns.plt.title("Data source: api.superjob.ru | "
                        "Author: Stanislav Bogatskiy (github.com/SBKubric)", fontsize=8)
+    sns.plt.show()
     if output:
         g.savefig("output.png", bbox_inches="tight")
 
