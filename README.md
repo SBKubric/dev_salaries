@@ -64,3 +64,5 @@ python3 just_do_it.py
 ## Disclaimer
 
 The code is written in educational purposes ONLY.
+
+[logo]:
