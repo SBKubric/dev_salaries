@@ -61,8 +61,12 @@ Or you can just launch a one script
 python3 just_do_it.py
 ```
 
+The result should be look like this:
+
+![The result][logo]
+
 ## Disclaimer
 
 The code is written in educational purposes ONLY.
 
-[logo]:
+[logo]: ./result.png
