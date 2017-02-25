@@ -21,11 +21,20 @@ def fetch_vacancies_json() -> dict:
     vacancies_url = 'https://api.superjob.ru/2.0/vacancies/'
     params = {
         'town': 4,
-        'catalogues': 33,
+        'catalogues': 48,
         'count': 100,
         'no_agreement': 1,
-        'keywords': [[10, 'or', 'Программист'], [10, 'or', 'Разработчик'],
-                     [10, 'or', 'Developer'], [10, 'or', 'Software Engineer'], [10, 'or', 'Инженер']]
+        'keywords': [
+            [10, 'or', 'Программист'],
+            [10, 'or', 'Разработчик'],
+            [10, 'or', 'Developer'],
+            [10, 'or', 'Software Engineer'],
+            [10, 'or', 'Инженер'],
+            [10, 'nein', 'Аналитик'],
+            [10, 'nein', 'Директор'],
+            [10, 'nein', 'Менеджер'],
+            [10, 'nein', 'Консультант'],
+        ]
     }
     params = urlencode(params)
     return json.loads(
